@@ -21,8 +21,14 @@ export default function addNotes() {
 // @version      ${version}
 // @description  ${description}
 // @author       ${author}
-// @match        ${greasemonkey.match}
-// @match        ${greasemonkey.match}
+${(Array.isArray(greasemonkey.match)
+  ? greasemonkey.match
+  : [greasemonkey.match]
+)
+  .map((item) => {
+    return `// @match        ${item}`;
+  })
+  .join("\n")}
 // @grant        none
 // @license      ${license}
 // ==/UserScript==

@@ -5,7 +5,7 @@
 // @description  剑网三万宝楼点击高亮，用于避免重复点击。
 // @author       yliu
 // @match        https://jx3.seasunwbl.com/buyer?t=role
-// @match        https://jx3.seasunwbl.com/buyer?t=role
+// @match        https://jx3.seasunwbl.com/follow?t=role
 // @grant        none
 // @license      MIT
 // ==/UserScript==
@@ -17,8 +17,8 @@
     if (!(e.target instanceof Element && e.target.textContent === "\u8BE6\u60C5")) {
       return;
     }
-    const parentElement = e.target.closest(
-      '[class*="__roleItem--"]'
+    const parentElement = e.target.closest('[class*="__roleItem--"]') || e.target.closest(
+      '[class*="-components-m__followItemWrap--"]'
     );
     if (!parentElement) {
       return;

@@ -1,11 +1,14 @@
 {
   "name": "wanbaolou-click-highlight",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "剑网三万宝楼点击高亮，用于避免重复点击。",
   "private": true,
   "main": "dist/index.js",
   "greasemonkey": {
-    "match": "https://jx3.seasunwbl.com/buyer?t=role",
+    "match": [
+      "https://jx3.seasunwbl.com/buyer?t=role",
+      "https://jx3.seasunwbl.com/follow?t=role"
+    ],
     "namespace": "剑网三万宝楼点击高亮"
   },
   "scripts": {
