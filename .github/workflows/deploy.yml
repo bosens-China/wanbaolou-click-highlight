@@ -87,3 +87,13 @@ jobs:
           asset_path: dist/index.zip
           asset_name: index.zip
           asset_content_type: application/zip
+
+      - name: Commit
+        run: |
+          git checkout main
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add ./dist
+          git commit -m "Update build" || exit 0
+          git pull --rebase --autostash
+          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git main
