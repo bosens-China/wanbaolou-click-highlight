@@ -6,12 +6,13 @@ on:
       - main
     paths:
       - src/**
+      - .github/**
   # 允许你从 Actions 选项卡手动运行此工作流程
   workflow_dispatch:
 
 # 设置 GITHUB_TOKEN 的权限，以允许部署到 GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -29,8 +30,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
-          persist-credentials: false
           # otherwise, there would be errors pushing refs to the destination repository.
           fetch-depth: 0
 
