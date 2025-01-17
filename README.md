@@ -6,6 +6,11 @@
 
 工作原理，每次点击会将当前的项目进行高亮展示，但是不会持久记忆，也就是说当你分页变化或者刷新网页的话就会失去高亮的展示效果。
 
+## 支持区域
+
+- 角色购买页面
+- 个人关注页面
+
 ## 使用方法
 
 1. 下载 [Tampermonkey](https://www.tampermonkey.net/index.php?browser=chrome&locale=zh)（油猴）插件；
