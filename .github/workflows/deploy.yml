@@ -74,3 +74,6 @@ jobs:
           asset_path: dist/index.zip
           asset_name: index.zip
           asset_content_type: application/zip
+
+permissions:
+  contents: write
