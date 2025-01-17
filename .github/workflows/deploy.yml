@@ -71,8 +71,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ env.version }}_${{env.time}}
-          release_name: ${{ env.name }} v${{ env.version }}
+          tag_name: v${{ env.version }}_${{env.time}}
+          release_name: v${{ env.version }}_${{env.time}}
           body: New release
           draft: false
           prerelease: false
@@ -94,6 +94,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git add ./dist
+          git reset dist/index.zip
           git commit -m "Update build" || exit 0
           git pull --rebase --autostash
           git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git main
