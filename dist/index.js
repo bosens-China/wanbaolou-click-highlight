@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         剑网三万宝楼点击高亮
 // @namespace    https://github.com/bosens-China/wanbaolou-click-highlight
-// @version      1.0.0
+// @version      1.0.1
 // @description  剑网三万宝楼点击高亮，用于避免重复点击。
 // @author       yliu
 // @match        https://jx3.seasunwbl.com/buyer?t=role
